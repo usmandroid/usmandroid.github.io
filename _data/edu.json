@@ -1,0 +1,21 @@
+[
+    {
+        "school": "Technical University of Munich",
+        "school_location": "Munich, Germany",
+        "degree": "Master of Science - Communications Engineering (Nachrichtentechnik)",
+        "time_period": "Oct 2020 - Present"
+    },
+    {
+        "school": "Jacobs University Bremen",
+        "school_location": "Bremen, Germany",
+        "degree": "Bachelor of Science - Electrical and Computer Engineering (with minor. Intelligent Mobile Systems); CGPA 1.86",
+        "time_period": "Aug 2017 - Jun 2020"
+    },
+    {
+        "school": "University of Aberdeen",
+        "school_location": "Aberdeen, Scotland UK",
+        "degree": "Semester Abroad Erasmus - Computing Science",
+        "time_period": "Sep 2020 - Feb 2020"
+    }
+
+]

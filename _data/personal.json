@@ -1,0 +1,49 @@
+[
+    {
+        "name": "Sheikh Usman Ali",
+        "website": "http://usmandroid.github.io",
+        "email": "sheikh.ali@tum.de",
+        "phone": "+4915252879032",
+        "linkedin":"https://www.linkedin.com/in/sheikh-usman-ali",
+        "facebook":"https://www.facebook.com/mr.sheikh.usman.ali/",
+        "github":"https://github.com/usmandroid",
+        "languages": [
+            {
+                "language": "Matlab"
+            },
+            {
+                "language": "C++"
+            },
+            {
+                "language": "C"
+            },
+            {
+                "language": "JavaScript"
+            },
+            {
+                "language": "Python"
+            },
+            {
+                "language": "VHDL"
+            },
+            {
+                "language": "SQL"
+            }
+
+        ],
+        "technologies": [
+            {
+                "technology": "NodeJs"
+            },
+            {
+                "technology": "Linux"
+            },
+            {
+                "technology": "Embedded C"
+            },
+            {
+                "technology": "W3C Web of Things"
+            }
+        ]
+    }
+]
