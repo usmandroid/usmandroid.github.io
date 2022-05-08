@@ -8,18 +8,18 @@
         "details": [
             {
                 "title": "Smart Sensing and Analytics",
-                "description": "During Mandatory MSc. Internship, built a Scikit-Learn & TensorFlow based Machine-Learning pipeline for classification of 5G and GNSS signal for LOS vs NLOS signal to further improve positioning algorithm accuracy. Created Jupyter notebooks for running ML-pipeline and documentation of pre-processing. Performed Analysis of Variance testing and Principal component analysis to reduce training overhead. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
-                "languages": " MATLAB, SketchUp, Blender, Spirent SimGEN, Oktal-SE SE-NAV C\\#" 
+                "description": "MSc. Internship, built a Scikit-Learn \\& TensorFlow based Machine-Learning pipeline for classification of 5G and GNSS signal for LOS vs NLOS signal to further improve positioning algorithm accuracy. Created Jupyter notebooks for running ML-pipeline and documentation of pre-processing. Performed Analysis of Variance testing and Principal component analysis to reduce training overhead. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
+                "languages": " MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV " 
             },
             {
                 "title": "Sensor Fusion and Localization",
                 "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based Observed Time Difference Of Arrival multilateration . Implemented a MATLAB based simulation using a statistical Quadriga Channel model and Ray-tracing model of Indoor Office environment. Added Object-oriented PRS module to the codebase using CI/CD pipeline of the team. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
-                "languages":"Matlab, C++, SketchUp, "
+                "languages":"Matlab C++ SketchUp, "
             },
         	{
                 "title": "Smart Sensing and Analytics",
                 "description": "Assisted a team in developing a testbed for 5G - New Radio signalling. Pre-processed survey data from Bayerisches Landesvermessungsamt to generate a 3D model of the Nürnberg for later use in SE-NAV ray-tracing software. Executed moving and coverage simulations to map the positioning accuracy using 5G base station. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for combined Satellite and 5G hybrid positioning to further improve localization accuracy.",
-                "languages": " Python MATLAB, SketchUp, Blender, Spirent SimGEN, Oktal-SE SE-NAV C\\#" 
+                "languages": " Python MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV" 
             }
            
         ]
@@ -34,7 +34,7 @@
             {
                 "title": "Monte-Carlo Simulations",
                 "description": "Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: Multiattribute attention switching (MAAS) model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.",
-                "languages": "MATLAB\\#"
+                "languages": "MATLAB"
             }
         ]
     }

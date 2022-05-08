@@ -2,7 +2,7 @@
     {
         "title": "IoT Remote Lab",
         "description": "Created a smart weather monitor for automated gardening sprinklers using web of things standard from W3C. Incorporated APIs to fetch hourly weather forecast, store it in a 48 hour database and based on self-built weather model predict the rain to attain optimal plant growth. ",
-        "languages": "javascript nodejs JSON MySQL"
+        "languages": "JavaScript nodejs JSON MySQL"
     },
     {
         "title": "Enterpreneurship",
@@ -12,7 +12,7 @@
     {
         "title": "Embedded Systems Lab",
         "description": "Designed a light-Seeker Robot. Built a sensor using photo-resistors to determine direction of incoming light. Constructed a H-bridge that turns a Servo DC motor towards the light source. Researched a method to ramp the motor’s acceleration to create a critically damped system. ",
-        "languages": "C++ MiniSAT Glucose"
+        "languages": "C++ Embedded C"
     },
     {
         "title": "Advanced Digital Design",
