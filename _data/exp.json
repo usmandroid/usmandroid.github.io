@@ -8,13 +8,13 @@
         "details": [
             {
                 "title": "Smart Sensing and Analytics",
-                "description": "MSc. Internship, built a Scikit-Learn \\& TensorFlow based Machine-Learning pipeline for classification of 5G and GNSS signal for LOS vs NLOS signal to further improve positioning algorithm accuracy. Created Jupyter notebooks for running ML-pipeline and documentation of pre-processing. Performed Analysis of Variance testing and Principal component analysis to reduce training overhead. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
-                "languages": " MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV " 
+                "description": "MSc. Internship, built a Scikit-Learn \\& TensorFlow based Machine-Learning pipeline for classification of LOS\/NLOS 5G \\& GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
+                "languages": " MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV" 
             },
             {
                 "title": "Sensor Fusion and Localization",
                 "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based Observed Time Difference Of Arrival multilateration . Implemented a MATLAB based simulation using a statistical Quadriga Channel model and Ray-tracing model of Indoor Office environment. Added Object-oriented PRS module to the codebase using CI/CD pipeline of the team. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
-                "languages":"Matlab C++ SketchUp, "
+                "languages":"Matlab C++ SketchUp"
             },
         	{
                 "title": "Smart Sensing and Analytics",
