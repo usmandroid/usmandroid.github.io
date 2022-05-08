@@ -13,7 +13,7 @@
             },
             {
                 "title": "Sensor Fusion and Localization",
-                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based Observed Time Difference Of Arrival multilateration . Implemented a MATLAB based simulation using a statistical Quadriga Channel model and Ray-tracing model of Indoor Office environment. Added Object-oriented PRS module to the codebase using CI/CD pipeline of the team. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
+                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based OTDOA multilateration. Implemented a MATLAB simulation using a statistical Channel model\\& Ray-tracing model of Indoor Office environment.Added PRS module to the company codebase using CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
                 "languages":"Matlab C++ SketchUp"
             },
         	{
