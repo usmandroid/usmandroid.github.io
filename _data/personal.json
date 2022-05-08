@@ -12,6 +12,9 @@
                 "language": "Matlab"
             },
             {
+                "language": "Python"
+            },
+            {
                 "language": "C++"
             },
             {
@@ -19,9 +22,6 @@
             },
             {
                 "language": "JavaScript"
-            },
-            {
-                "language": "Python"
             },
             {
                 "language": "VHDL"
