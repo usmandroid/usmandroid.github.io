@@ -8,17 +8,17 @@
         "details": [
             {
                 "title": "Smart Sensing and Analytics",
-                "description": "MSc. Internship, built a Scikit-Learn & TensorFlow based Machine-Learning pipeline for classification of LOS\/NLOS 5G & GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
-                "languages": " Python MATLAB SketchUp Oktal-SE SE-NAV"
+                "description": "MSc. Internship, built a Scikit-Learn &amp; TensorFlow based Machine-Learning pipeline for classification of LOS\/NLOS 5G &amp; GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
+                "languages": " Python MATLAB SketchUp Oktal-SE SE-NAV"ß
             },
             {
                 "title": "Sensor Fusion and Localization",
-                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based OTDOA multilateration. Implemented a MATLAB simulation using a statistical Channel model& Ray-tracing model of Indoor Office environment.Added PRS module to the company codebase using CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
+                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based OTDOA multilateration. Implemented a MATLAB simulation using a statistical Channel model&amp; Ray-tracing model of Indoor Office environment.Added PRS module to the company codebase using CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
                 "languages": "Matlab C++ SketchUp"
             },
             {
                 "title": "Smart Sensing and Analytics",
-                "description": "Assisted a team in developing a testbed for 5G - New Radio signalling. Preprocessed Bayern state survey data to generate a 3D model of the city for channel modelling. Executed moving & coverage simulations for 5G & GNSS networks. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for GNSS & 5G hybrid positioning.",
+                "description": "Assisted a team in developing a testbed for 5G - New Radio signalling. Preprocessed Bayern state survey data to generate a 3D model of the city for channel modelling. Executed moving &amp; coverage simulations for 5G &amp; GNSS networks. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for GNSS &amp; 5G hybrid positioning.",
                 "languages": " Python MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV"
             }
         ]
