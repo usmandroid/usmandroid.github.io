@@ -32,7 +32,7 @@
         "details": [
             {
                 "title": "Monte-Carlo Simulations",
-                "description": "Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: Multiattribute attention switching (MAAS) model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.",
+                "description": "Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: MAAS model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.",
                 "languages": "MATLAB"
             }
         ]
