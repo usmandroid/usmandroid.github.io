@@ -65,7 +65,7 @@ function printHeading(file)
     tex.print("\\href")
     tex.print("{" .. value["website"] .. "/}")
     tex.print("{" .. value["website"] .. "}")
-    tex.print(" & Phone: " .. value["phone"] .. "")
+    tex.print(" & Phone: " .. value["phone"] .. "\\\\")
     tex.print(" & Address: " .. value["address"] .. "\\\\")
     
 
