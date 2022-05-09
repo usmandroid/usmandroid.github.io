@@ -66,7 +66,7 @@ function printHeading(file)
     tex.print("{" .. value["website"] .. "/}")
     tex.print("{" .. value["website"] .. "}")
     tex.print(" & Phone: " .. value["phone"] .. "\\\\")
-    tex.print(" & Address: " .. value["address"] .. "\\\\")
+    tex.print(" & Address: " .. value["address"] .. "\\")
     
 
     tex.print("\\end{tabular*}")
