@@ -9,16 +9,6 @@
                 "title": "Channel Estimation and Machine Learning",
                 "description": "Implement Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using Tensoflow and Pytorch. Use GPU for batched algorithm implementation and parallel code execution",
                 "languages": "Python MATLAB"
-            },
-            {
-                "title": "Sensor Fusion and Localization",
-                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based OTDOA multilateration. Implemented a MATLAB simulation using a statistical Channel modeland Ray-tracing model of Indoor Office environment.Added PRS module to the company codebase using CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
-                "languages": "Matlab C++ SketchUp"
-            },
-            {
-                "title": "Smart Sensing and Analytics",
-                "description": "Assisted a team in developing a testbed for 5G - New Radio signalling. Preprocessed Bayern state survey data to generate a 3D model of the city for channel modelling. Executed moving and coverage simulations for 5G and GNSS networks. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for GNSS and 5G hybrid positioning.",
-                "languages": "Python MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV"
             }
         ]
     },
