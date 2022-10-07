@@ -17,7 +17,7 @@
         "company_location": "Nürnberg, Germany",
         "role": "Research Assistant",
         "team": "Positioning and Networks",
-        "time_duration": " 2019 - Present",
+        "time_duration": " 2019 - 2022",
         "details": [{
                 "title": "Smart Sensing and Analytics",
                 "description": "MSc. Internship, built a Scikit-Learn and TensorFlow based Machine-Learning pipeline for classification of LOS/NLOS 5G and GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
