@@ -7,7 +7,7 @@
         "time_duration": " 2022 - Present",
         "details": [{
                 "title": "Channel Estimation and Machine Learning",
-                "description": "Implement Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using Tensoflow and Pytorch. Use GPU for batched algorithm implementation and parallel code execution",
+                "description": "Implement Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using Tensoflow and Pytorch. Use GPU for batched algorithm implementation and parallel code execution.",
                 "languages": "Python MATLAB"
             }
         ]
