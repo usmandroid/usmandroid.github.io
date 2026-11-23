@@ -1,0 +1,43 @@
+{
+    "size": [1584, 396],
+    "font": {
+        "family": "DejaVu Sans Mono, Menlo, Consolas, monospace",
+        "size": 20,
+        "cell": 0.602,
+        "line": 1.3
+    },
+    "margin": 24,
+    "photo_safe_px": 330,
+    "frame": true,
+    "title": {
+        "text": "Sheikh Usman Ali",
+        "size": 54
+    },
+    "subtitle": "Communications engineer · Post-Shannon research",
+    "rows": [
+        ["focus", "identification codes · 6G · SDR"],
+        ["stack", "C++ · Python · GNU Radio · TensorFlow"],
+        ["web", "usmandroid.github.io"]
+    ],
+    "footer": "github.com/usmandroid · linkedin.com/in/sheikh-usman-ali",
+    "themes": {
+        "dark": {
+            "bg": "#0b0b0b",
+            "fg": "#dddddd",
+            "dim": 0.6,
+            "bold": 700
+        },
+        "light": {
+            "bg": "#fafafa",
+            "fg": "#111111",
+            "dim": 0.6,
+            "bold": 700
+        },
+        "eink": {
+            "bg": "#ffffff",
+            "fg": "#000000",
+            "dim": 0.7,
+            "bold": 700
+        }
+    }
+}

@@ -1,0 +1,5 @@
+# GitHub Pages / Jekyll: publish the site, not the tooling
+exclude:
+  - dev
+  - linkedin
+  - Makefile

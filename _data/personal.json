@@ -4,10 +4,9 @@
         "website": "http://usmandroid.github.io",
         "email": "sheikh.ali@tum.de",
         "phone": "+4915252879032",
-        "linkedin":"https://www.linkedin.com/in/sheikh-usman-ali",
-        "facebook":"https://www.facebook.com/mr.sheikh.usman.ali/",
-        "github":"https://github.com/usmandroid",
-        "address": "Heiglhofstraße 64, 81377 München",
+        "linkedin": "https://www.linkedin.com/in/sheikh-usman-ali",
+        "facebook": "https://www.facebook.com/mr.sheikh.usman.ali/",
+        "github": "https://github.com/usmandroid",
         "languages": [
             {
                 "language": "Matlab"
@@ -30,7 +29,6 @@
             {
                 "language": "SQL"
             }
-
         ],
         "technologies": [
             {
@@ -45,6 +43,69 @@
             {
                 "technology": "Web of Things"
             }
-        ]
+        ],
+        "skill_groups": [
+            {
+                "label": "Programming Languages",
+                "items": ["Python", "MATLAB", "C", "C++", "JavaScript", "VHDL", "HTML"]
+            },
+            {
+                "label": "IDEs",
+                "items": ["VS Code", "PyCharm", "Visual Studio", "Arduino"]
+            },
+            {
+                "label": "Software Development",
+                "items": ["Git", "Azure CI/CD", "Agile"]
+            },
+            {
+                "label": "OSs",
+                "items": ["MacOS", "Linux", "Windows", "Android"]
+            },
+            {
+                "label": "Numerical Software",
+                "items": ["NumPy", "Pandas", "R", "Mathematica"]
+            },
+            {
+                "label": "Machine Learning",
+                "items": [
+                    "TensorFlow/Keras",
+                    "TFLite",
+                    "PyTorch",
+                    "NVIDIA TensorRT",
+                    "ONNX",
+                    "Aim",
+                    "MLflow",
+                    "Docker",
+                    "Kubernetes",
+                    "Flask"
+                ]
+            },
+            {
+                "label": "Simulation Tools",
+                "items": ["LabVIEW NXG", "GNU Radio", "SIMULINK", "LTspice"]
+            },
+            {
+                "label": "Publishing Software",
+                "items": ["MS Office", "LaTeX"]
+            }
+        ],
+        "spoken_languages": [
+            "English (fluent written, fluent oral)",
+            "German (intermediate written, intermediate oral)",
+            "Hindi/Urdu (native)"
+        ],
+        "certificates": [
+            "HackaTUM 2022: Rhode & Schwarz Competition “Bring microwave imaging to the next level”",
+            "Coursera: Machine Learning Engineering for Production (MLOps) Specialization 2022"
+        ],
+        "options": {
+            "show_languages": true,
+            "languages_as_list": true,
+            "max_line_chars": 90,
+            "show_abstract": false,
+            "photo_placeholder": true,
+            "photo": "",
+            "contact_placeholders": true
+        }
     }
 ]

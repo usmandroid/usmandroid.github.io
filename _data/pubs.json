@@ -1,0 +1,185 @@
+[
+    {
+        "title": "Communicating Semantics through Identification Codes: A Practical Demonstration",
+        "authors": [
+            "Sheikh Usman Ali",
+            "Shubham Mahajan",
+            "Juan A. Cabrera",
+            "Pit Hofmann",
+            "Frank H. P. Fitzek"
+        ],
+        "venue": "2027 IEEE 24th Consumer Communications & Networking Conference (CCNC 2027)",
+        "place": "Las Vegas, NV, USA, 9–12 January 2027",
+        "year": 2027,
+        "note": "Demo paper",
+        "doi": "",
+        "links": [
+            {
+                "label": "Paper",
+                "url": ""
+            },
+            {
+                "label": "PDF",
+                "url": ""
+            },
+            {
+                "label": "Code",
+                "url": ""
+            },
+            {
+                "label": "Slides",
+                "url": ""
+            }
+        ],
+        "abstract": "",
+        "keywords": [
+            "Message Identification",
+            "Software-Defined Radio",
+            "Post-Shannon Communication",
+            "Wireless Testbed",
+            "OFDM"
+        ]
+    },
+    {
+        "title": "Quantitative Analysis of Energy Consumption for Identification Codes on Embedded Devices",
+        "authors": [
+            "Sheikh Usman Ali",
+            "Shubham Mahajan",
+            "Juan A. Cabrera",
+            "Pit Hofmann",
+            "Frank H. P. Fitzek"
+        ],
+        "venue": "European Wireless 2026 (EW 2026)",
+        "place": "Rimini, Italy, 17–19 June 2026",
+        "pages": "6 pages",
+        "year": 2026,
+        "doi": "",
+        "links": [
+            {
+                "label": "Paper",
+                "url": ""
+            },
+            {
+                "label": "PDF",
+                "url": ""
+            },
+            {
+                "label": "Code",
+                "url": ""
+            },
+            {
+                "label": "Slides",
+                "url": ""
+            }
+        ],
+        "abstract": "",
+        "keywords": []
+    },
+    {
+        "title": "Metric-Driven Reliability and Error Performance Evaluation of K-Identification Systems",
+        "authors": [
+            "Shubham Mahajan",
+            "Sheikh Usman Ali",
+            "Juan A. Cabrera",
+            "Pit Hofmann",
+            "Frank H. P. Fitzek"
+        ],
+        "venue": "European Wireless 2026 (EW 2026)",
+        "place": "Rimini, Italy, 17–19 June 2026",
+        "pages": "6 pages",
+        "year": 2026,
+        "doi": "",
+        "links": [
+            {
+                "label": "Paper",
+                "url": ""
+            },
+            {
+                "label": "PDF",
+                "url": ""
+            },
+            {
+                "label": "Code",
+                "url": ""
+            },
+            {
+                "label": "Slides",
+                "url": ""
+            }
+        ],
+        "abstract": "",
+        "keywords": []
+    },
+    {
+        "title": "Supervised Machine Learning Assisted Hybrid Positioning Based on GNSS and 5G",
+        "authors": [
+            "Phuong Bich Duong",
+            "Birendra Ghimire",
+            "Katrin Dietmayer",
+            "Sheikh Usman Ali",
+            "Haider Al Kim",
+            "Jochen Seitz"
+        ],
+        "venue": "2022 IEEE 12th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2022)",
+        "place": "Beijing, China, 5–8 September 2022",
+        "pages": "pp. 1–8",
+        "year": 2022,
+        "doi": "10.1109/IPIN54987.2022.9918098",
+        "links": [
+            {
+                "label": "Paper",
+                "url": ""
+            },
+            {
+                "label": "PDF",
+                "url": ""
+            },
+            {
+                "label": "Code",
+                "url": ""
+            },
+            {
+                "label": "Slides",
+                "url": ""
+            }
+        ],
+        "abstract": "",
+        "keywords": []
+    },
+    {
+        "title": "A Combined Ray Tracing Simulation Environment for Hybrid 5G and GNSS Positioning",
+        "authors": [
+            "Ivana Lukčin",
+            "Phuong Bich Duong",
+            "Katrin Dietmayer",
+            "Sheikh Usman Ali",
+            "Sebastian Kram",
+            "Jochen Seitz",
+            "Wolfgang Felber"
+        ],
+        "venue": "International Conference on Localization and GNSS (ICL-GNSS 2021), Work-in-Progress Papers",
+        "place": "CEUR Workshop Proceedings, Vol. 2880, 2021",
+        "year": 2021,
+        "doi": "",
+        "links": [
+            {
+                "label": "Paper",
+                "url": ""
+            },
+            {
+                "label": "PDF",
+                "url": ""
+            },
+            {
+                "label": "Code",
+                "url": ""
+            },
+            {
+                "label": "Slides",
+                "url": ""
+            }
+        ],
+        "abstract": "",
+        "keywords": []
+    }
+]

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Sheikh Usman Ali: Intro</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('tc-style-theme');if(t&&t!=='auto')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+/* tokens: the same --bg --fg --bd as the style sheet; no data-theme = follow the system */
+:root{--bg:#0b0b0b;--fg:#ddd;--bd:#333;color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme]){--bg:#fafafa;--fg:#111;--bd:#ccc;color-scheme:light}}
+:root[data-theme=light]{--bg:#fafafa;--fg:#111;--bd:#ccc;color-scheme:light}
+:root[data-theme=eink]{--bg:#fff;--fg:#000;--bd:#000;color-scheme:light}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg)}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sl-deck{width:min(100vw,177.78vh);border:0}
+.b{font-weight:700}
+.page-hint{opacity:.6;font:12px ui-monospace,Menlo,Consolas,monospace;padding:6px}
+button.link{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0;text-decoration:underline}
+@media print{.page-hint{display:none}body{display:block;height:auto}}
+</style>
+<link rel="stylesheet" href="../assets/deck.css">
+<noscript><style>
+/* without JavaScript every slide is shown, one under the other */
+.sl-deck{aspect-ratio:auto;overflow:visible;width:min(100vw,1280px)}
+.sl{display:flex;position:relative;aspect-ratio:16/9;border-bottom:1px solid var(--bd)}
+.page-hint{display:none}
+.sl li{opacity:1}
+.sl-foot span:first-child{visibility:hidden}
+</style></noscript>
+</head>
+<body>
+<div class="sl-deck" id="deck">
+
+  <section class="sl">
+    <pre class="sl-frame"><span class="dim">╭──────────────────────────────────────────╮
+│                                          │
+│</span>   <span class="b">Sheikh Usman Ali</span>                       <span class="dim">│
+│</span>   Communications engineer · researcher   <span class="dim">│
+│</span>   Intro · 2026                           <span class="dim">│
+│                                          │
+╰──────────────────────────────────────────╯</span></pre>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>Who I am</h1>
+    <ul>
+      <li>Research Scientist, Post-Shannon communications</li>
+      <li>Ecologic-Computing GmbH, TU Dresden</li>
+      <li>M.Sc. Communications Engineering, TUM</li>
+      <li>B.Sc. Electrical and Computer Eng., Jacobs Bremen</li>
+    </ul>
+    <div class="sl-notes">Start with the role, then the two degrees. One breath each.</div>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>What I work on now</h1>
+    <ul>
+      <li>Identification codes for 6G</li>
+      <li>Goal-oriented communications in real-time C++</li>
+      <li>SDR demos: a GNU Radio WLAN OFDM transceiver</li>
+    </ul>
+    <div class="sl-notes">ID codes: the receiver asks "was this the message?", not "what was the message?".</div>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>Before</h1>
+    <ul>
+      <li>NI / Emerson: 5G-NR neural receiver on SDRs</li>
+      <li>Motius: deep learning for synchronisation</li>
+      <li>Fraunhofer IIS: GNSS and 5G positioning</li>
+    </ul>
+    <div class="sl-notes">Thesis: synchronisation and signal detection with deep learning.</div>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <pre id="big">██████
+██    
+██████
+    ██
+██████</pre>
+    <p class="src">papers and demos, 2021 - 2027</p>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>Latest</h1>
+    <ul>
+      <li>Semantics via ID codes: a demo (CCNC 2027)</li>
+      <li>Energy of ID codes on devices (EW 2026)</li>
+      <li>K-identification reliability metrics (EW 2026)</li>
+    </ul>
+    <div class="sl-notes">Full list with abstracts: Publications -- Ali.pdf</div>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>Tools</h1>
+    <ul>
+      <li>Python · C · C++ · MATLAB</li>
+      <li>TensorFlow · PyTorch · ONNX · TensorRT</li>
+      <li>GNU Radio · LabVIEW · Sionna</li>
+    </ul>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+  <section class="sl">
+    <h1>Thank you</h1>
+    <p>usmandroid.github.io</p>
+    <p>github.com/usmandroid</p>
+    <p>linkedin.com/in/sheikh-usman-ali</p>
+    <div class="sl-foot"><span>◀ back   next ▶</span><span class="no"></span></div>
+  </section>
+
+</div>
+<p class="page-hint">
+  <button class="link" data-act="b">◀ back (←)</button> ·
+  <button class="link" data-act="n">next (→) ▶</button> ·
+  <button class="link" data-act="o">notes (n)</button> ·
+  <button class="link" data-act="f">fullscreen (f)</button> ·
+  <button class="link" data-act="t">theme (t)</button> ·
+  <button class="link" data-act="p">print (p)</button> ·
+  <a href="../" style="color:inherit">resume</a>
+</p>
+<script src="../assets/deck.js"></script>
+<script>
+// the 3 x 5 block digit font of the style sheet, every cell doubled
+const FONT={"0":["███","█ █","█ █","█ █","███"],"1":["  █","  █","  █","  █","  █"],"2":["███","  █","███","█  ","███"],
+"3":["███","  █","███","  █","███"],"4":["█ █","█ █","███","  █","  █"],"5":["███","█  ","███","  █","███"],
+"6":["███","█  ","███","█ █","███"],"7":["███","  █","  █","  █","  █"],"8":["███","█ █","███","█ █","███"],
+"9":["███","█ █","███","  █","███"]," ":["   ","   ","   ","   ","   "]};
+function tcBigText(s){const rows=['','','','',''];for(const ch of s){const g=FONT[ch]||FONT[' '];
+  for(let i=0;i<5;i++)rows[i]+=[...g[i]].map(c=>c+c).join('')+'  ';}
+  const r=rows.map(x=>x.slice(0,-2)),w=Math.max(...r.map(x=>x.length));return r.map(x=>x.padEnd(w)).join('\n');}
+document.getElementById('big').textContent=tcBigText('5');
+
+const root=document.documentElement,deckEl=document.getElementById('deck'),deck=tcDeck(deckEl);
+const themes=['auto','dark','light','eink'];
+function setTheme(t){if(t==='auto')root.removeAttribute('data-theme');else root.dataset.theme=t;
+  try{t==='auto'?localStorage.removeItem('tc-style-theme'):localStorage.setItem('tc-style-theme',t)}catch(e){}}
+const act={b:deck.back,n:deck.next,
+  o:()=>deckEl.classList.toggle('notes'),
+  f:()=>document.fullscreenElement?document.exitFullscreen():deckEl.requestFullscreen(),
+  t:()=>setTheme(themes[(themes.indexOf(root.dataset.theme||'auto')+1)%themes.length]),
+  p:()=>window.print()};
+document.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{act[b.dataset.act]();deckEl.focus()});
+// keys work on the whole page; theme and print are not deck keys
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.target===deckEl)return;
+  if(e.key==='t')act.t();else if(e.key==='p')act.p();
+  else deckEl.dispatchEvent(new KeyboardEvent('keydown',{key:e.key,cancelable:true}))});
+deckEl.addEventListener('keydown',e=>{if(e.key==='t')act.t();else if(e.key==='p')act.p()});
+deckEl.focus();
+</script>
+</body>
+</html>

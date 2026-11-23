@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "esbenp.prettier-vscode",
+        "johnnymorganz.stylua",
+        "sumneko.lua",
+        "james-yu.latex-workshop",
+        "ms-vscode.makefile-tools",
+        "editorconfig.editorconfig"
+    ]
+}

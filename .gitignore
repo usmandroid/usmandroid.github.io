@@ -38,3 +38,18 @@ _site
 *.xcp
 *.xdy
 *.tdo
+info
+###Build###
+dev/build/
+dev/.venv/
+dev/_site/
+*.docx
+linkedin/out/
+
+###Published documents: files/ is tracked (info/ stays private)###
+!files/
+!files/*.pdf
+!files/*.docx
+__pycache__/
+node_modules/
+.~lock.*

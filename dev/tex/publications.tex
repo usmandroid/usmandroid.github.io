@@ -1,0 +1,46 @@
+%-------------------------------------------
+% List of publications in LuaLaTeX
+% Build: `make pubs` (needs lualatex + latexmk; run from the repo root)
+% Data: _data/pubs.json (+ the owner's name from _data/personal.json), printed by dev/lua/parser.lua
+%-------------------------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,top=22mm,bottom=22mm,left=20mm,right=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\urlstyle{same}
+\pagestyle{empty}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% one publication: number, bold title, authors, venue line, optional abstract
+\newcommand{\pubEntry}[4]{%
+  \vspace{7pt}\par
+  {\large\textbf{#1.\ #2}}\par\vspace{2pt}
+  #3\par\vspace{2pt}
+  #4\par}
+\newcommand{\pubAbstract}[2]{%
+  \vspace{3pt}\begin{minipage}{0.94\textwidth}\small
+    \textbf{Abstract.} #1\par\vspace{2pt}
+    \ifx\relax#2\relax\else\textbf{Keywords:} #2\fi
+  \end{minipage}\par}
+
+\begin{document}
+\directlua{dofile("dev/lua/parser.lua")}
+
+\begin{center}
+  {\Large\scshape List of Publications}\\[3pt]
+  \directlua{printOwnerName("_data/personal.json")}
+\end{center}
+\vspace{-4pt}\hrule\vspace{-2pt}
+
+\directlua{printPubFull("_data/pubs.json", "_data/personal.json")}
+
+\vspace{8pt}\hrule
+\end{document}

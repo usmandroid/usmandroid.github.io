@@ -1,0 +1,692 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <title>Sheikh Usman Ali</title>
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('tc-style-theme');if(t&&t!=='auto')document.documentElement.dataset.theme=t}catch(e){}</script>
+    <style>
+/* Resume: the terminalclock style sheet (STYLESHEET.html, section "Resume") applied to
+   the web page and its print/PDF output. Monochrome: text, bold, dim. No icons, no colour,
+   no filled buttons. Themes: auto (follows the visitor's system, live; the default), dark,
+   light, e-ink. No data-theme attribute = auto. Print is always black on white. */
+:root {
+  --bg: #0b0b0b;
+  --fg: #ddd;
+  --bd: #333;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #fafafa;
+    --fg: #111;
+    --bd: #ccc;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --fg: #111;
+  --bd: #ccc;
+  color-scheme: light;
+}
+:root[data-theme="eink"] {
+  --bg: #fff;
+  --fg: #000;
+  --bd: #000;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+body {
+  font:
+    13px/1.5 ui-monospace,
+    Menlo,
+    Consolas,
+    "DejaVu Sans Mono",
+    monospace;
+  padding: 28px 6vw 80px;
+}
+:root[data-theme="eink"] body {
+  font-weight: 600;
+}
+main {
+  max-width: 96ch;
+  margin: 0 auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--bd);
+}
+a:hover {
+  border-bottom-color: var(--fg);
+}
+.dim {
+  opacity: 0.6;
+}
+.b {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+h2 {
+  font-size: 16px;
+  margin: 30px 0 8px;
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 4px;
+}
+header p {
+  margin: 2px 0;
+}
+.sep:before {
+  content: " \00B7  ";
+}
+
+/* entry: bold name + dim line left, dim place + dates right */
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 18px;
+  margin: 10px 0 2px;
+}
+.entry .r {
+  text-align: right;
+  opacity: 0.6;
+}
+.entry .sub {
+  opacity: 0.6;
+}
+
+/* foldable entries: summary is the entry header, the marker is a glyph from the guide */
+details.job {
+  margin: 0;
+}
+details.job > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+details.job > summary::-webkit-details-marker {
+  display: none;
+}
+details.job > summary:before {
+  content: "\203A";
+  position: absolute;
+  left: -2.2ch;
+  top: 0;
+  font-weight: 700;
+}
+details.job[open] > summary:before {
+  content: "\2193";
+}
+
+/* detail lines belong to the entry above: ↳ */
+ul.items {
+  list-style: none;
+  margin: 2px 0 6px;
+  padding: 0;
+}
+ul.items li {
+  padding-left: 2ch;
+  text-indent: -2ch;
+  margin: 3px 0;
+  max-width: 90ch;
+}
+ul.items li:before {
+  content: "\21B3  ";
+  opacity: 0.6;
+}
+.tag,
+.langs {
+  opacity: 0.6;
+}
+.langs {
+  display: block;
+  max-width: calc(var(--limit, 90) * 1ch);
+}
+.tag:before {
+  content: " \00B7  ";
+}
+p.desc {
+  margin: 2px 0 8px;
+  max-width: 90ch;
+}
+
+/* publications: [n] in dim, newest first; the abstract folds */
+ol.pubs {
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+  counter-reset: pub;
+}
+ol.pubs li {
+  counter-increment: pub;
+  position: relative;
+  padding-left: 5ch;
+  margin: 10px 0;
+  max-width: 90ch;
+}
+ol.pubs li:before {
+  content: "[" counter(pub) "]";
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
+details.abs {
+  margin: 2px 0 0;
+}
+details.abs > summary {
+  list-style: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+details.abs > summary::-webkit-details-marker {
+  display: none;
+}
+details.abs > summary:before {
+  content: "\203A  ";
+}
+details.abs[open] > summary:before {
+  content: "\2193  ";
+}
+
+/* skills: the About pattern, dim right-aligned label + plain value */
+/* strict line limit (--limit characters, personal.json options.max_line_chars): lists wrap between items */
+.it {
+  white-space: nowrap;
+}
+.rows {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px 2ch;
+  margin: 6px 0;
+  max-width: calc(var(--limit, 90) * 1ch);
+}
+.rows dt {
+  text-align: right;
+  opacity: 0.6;
+}
+.rows dd {
+  margin: 0;
+}
+
+/* shortcuts are text with the key in brackets; one dim hint line */
+button.link {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+button.link[aria-pressed="true"] {
+  font-weight: 700;
+}
+button.link[aria-pressed="true"]:before {
+  content: "\203A ";
+}
+.hint {
+  margin-top: 44px;
+  opacity: 0.6;
+  font-size: 12px;
+}
+.hint button.link {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 20px 5vw 60px;
+  }
+  .entry {
+    grid-template-columns: 1fr;
+  }
+  .entry .r {
+    text-align: left;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  :root:root,
+  :root[data-theme] {
+    --bg: #fff;
+    --fg: #000;
+    --bd: #999;
+    color-scheme: light;
+  }
+  body {
+    padding: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+  main {
+    max-width: none;
+  }
+  h1 {
+    font-size: 20pt;
+  }
+  h2 {
+    font-size: 11.5pt;
+    margin: 12pt 0 4pt;
+    break-after: avoid;
+  }
+  .hint,
+  .themes {
+    display: none;
+  }
+  details.job > summary:before {
+    content: none;
+  }
+  .entry {
+    grid-template-columns: 1fr auto;
+  }
+  .entry .r {
+    text-align: right;
+  }
+  .entry,
+  ul.items li,
+  details.job,
+  ol.pubs li {
+    break-inside: avoid;
+  }
+  details.abs > summary:before {
+    content: none;
+  }
+  a {
+    border: 0;
+  }
+}
+
+/* controls that need JavaScript (theme, fold-all, print) are hidden without it; the page itself,
+   its folds (<details>) and the auto dark/light theme (a CSS media query) work without */
+.jsonly {
+  display: none;
+}
+.js .jsonly {
+  display: revert;
+}
+</style>
+  </head>
+
+  <body>
+    <main style="--limit:90">
+      <header>
+        <h1>Sheikh Usman Ali</h1>
+        <p class="dim">
+          <a href="mailto:sheikh.ali@tum.de">sheikh.ali@tum.de</a><span class="sep"></span><a href="https://www.linkedin.com/in/sheikh-usman-ali">linkedin</a><span class="sep"></span><a href="https://github.com/usmandroid">github</a><span class="sep"></span><a href="https://www.facebook.com/mr.sheikh.usman.ali/">facebook</a><span class="sep"></span><a href="sheikhUsmanAli_resume.pdf" download>pdf</a><span class="sep"></span><a href="sheikhUsmanAli_resume.docx" download>docx</a>
+        </p>
+        <p class="themes jsonly dim">Theme: <button class="link" data-theme-set="auto">auto</button> · <button class="link" data-theme-set="dark">dark</button> · <button class="link" data-theme-set="light">light</button> · <button class="link" data-theme-set="eink">e-ink</button></p>
+      </header>
+
+      <section id="education">
+        <h2>Education</h2>
+        
+          <div class="entry">
+            <div><span class="b">Technical University of Munich (TUM)</span><br><span class="sub">Master of Science - Communications Engineering (Nachrichtentechnik)</span></div>
+            <div class="r">Munich, Germany<br>Oct 2020 - Apr 2023</div>
+          </div>
+          
+          <ul class="items">
+            <li>Focus: Machine Learning, AI, Wireless Communications, IoT, Computer Networking</li><li>Courses: Applied Machine Intelligence, Machine Learning Methods and Tools, Software Defined Networking, Data Networking, Software Defined Radio Lab</li><li>Advanced Topic: Artificial Intelligence of Things</li><li>Thesis: Synchronization and Signal Detection in Wireless Communications: A Deep Learning Approach (LNT TUM, Motius GmbH)</li>
+          </ul>
+          
+        
+          <div class="entry">
+            <div><span class="b">Jacobs University Bremen</span><br><span class="sub">Bachelor of Science - Electrical and Computer Engineering (Minor Intelligent Mobile Systems)</span></div>
+            <div class="r">Bremen, Germany<br>Sep 2017 - Jul 2020</div>
+          </div>
+          
+          <ul class="items">
+            <li>Specialization: Wireless Communications and Information Theory, Embedded Systems</li><li>Thesis: Implementation and Evaluation of 5G positioning reference signals 3GPP Rel. 16, Grade 1.0, Supervisor: Prof. Dr. Giuseppe Abreu & Dr. Birendra Ghimire (Fraunhofer IIS)</li>
+          </ul>
+          
+        
+          <div class="entry">
+            <div><span class="b">University of Aberdeen</span><br><span class="sub">Semester Abroad Erasmus - Computing Science</span></div>
+            <div class="r">Aberdeen, Scotland UK<br>Sep 2019 - Feb 2020</div>
+          </div>
+          
+        
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">Ecologic-Computing GmbH, TU Dresden (Guest Researcher)</span><br><span class="sub">Research Scientist: Post Shannon<span class="sep"></span>6G Communications</span></div>
+                <div class="r">Dresden, Germany<br>Nov 2024 - Present</div>
+              </div>
+            </summary>
+            <ul class="items">
+              
+              <li><span class="b">Goal-Oriented Communications</span><br>Manage a software development team implementing C++ based goal-oriented communications algorithms for real-time embedded systems. Research and develop high performance versions of the state-of-the-art Identification codes for 6G communications systems.<br><span class="langs">Tech: <span class="it">C++</span> </span></li>
+              
+              <li><span class="b">GNU Radio WLAN OFDM Transceiver</span><br>Devised a GNU Radio based WLAN OFDM transceiver to demonstrate the ID codes library schemes in a real world environment.<br><span class="langs">Tech: <span class="it">GNU-Radio ·</span> <span class="it">SDR</span> </span></li>
+              
+            </ul>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">SDR & RFmx, NI Dresden (Emerson)</span><br><span class="sub">Software Engineer<span class="sep"></span>6G Research</span></div>
+                <div class="r">Saxony, Germany<br>May 2023 - Sep 2024</div>
+              </div>
+            </summary>
+            <ul class="items">
+              
+              <li><span class="b">5G-NR Neural Receiver</span><br>Developed Python and C based software tools to train and integrate low complexity Deep Learning based models for a 5G-NR Neural Receiver in a real-time CUDA GPU environment, using TensorFlow/Keras, NVIDIA TensorRT, Nvidia Sionna, LabView and ONNX for NI Ettus SDRs and C-based Open Air Interface to improve SNR gain.<br><span class="langs">Tech: <span class="it">RF ·</span> <span class="it">Deep-Learning ·</span> <span class="it">TensorFlow ·</span> <span class="it">ONNX ·</span> <span class="it">Python ·</span> <span class="it">C</span> </span></li>
+              
+              <li><span class="b">Digital Predistortion for RF Power Amplifiers</span><br>Developed a training and validation framework for Generative AI models including RNNs and LSTM based Digital Predistortion algorithms for RF Power Amplifiers in TensorFlow/Keras, to validate a Digital Twin PoC and improve the energy efficiency of PAs.<br><span class="langs">Tech: <span class="it">TensorFlow ·</span> <span class="it">Keras ·</span> <span class="it">C++</span> </span></li>
+              
+              <li><span class="b">Research Tooling</span><br>Focus on AI/ML-based communication systems and research on suitable test systems. Managed efficient storage, loading and tagging of large datasets exceeding hundreds of gigabytes. Assisted the presentation of research results at internal and external events.</li>
+              
+            </ul>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">Motius GmbH</span><br><span class="sub">Tech Specialist I: Communications Engineer<span class="sep"></span>Tech Cluster A.I. (FunKI)</span></div>
+                <div class="r">München, Germany<br>Jun 2022 - Apr 2023</div>
+              </div>
+            </summary>
+            <ul class="items">
+              
+              <li><span class="b">Master Thesis Work</span><br>Developed a Link-layer simulator in Python compliant with IEEE 802.11a/p OFDM. Trained and evaluated various Deep Learning models in TensorFlow and PyTorch including CNN and ResNet based models.<br><span class="langs">Tech: <span class="it">Python ·</span> <span class="it">TensorFlow ·</span> <span class="it">PyTorch ·</span> <span class="it">Docker</span> </span></li>
+              
+              <li><span class="b">Channel Estimation and Machine Learning</span><br>Implemented Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using TensorFlow and PyTorch. Used GPU for batched algorithm implementation and parallel code execution.<br><span class="langs">Tech: <span class="it">Python ·</span> <span class="it">MATLAB</span> </span></li>
+              
+            </ul>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">Fraunhofer Institute for Integrated Circuits IIS</span><br><span class="sub">Research Assistant and Intern<span class="sep"></span>Smart Sensing and Hybrid Positioning</span></div>
+                <div class="r">Nürnberg, Germany<br>Jan 2020 - Aug 2022</div>
+              </div>
+            </summary>
+            <ul class="items">
+              
+              <li><span class="b">Smart Sensing and Analytics</span><br>MSc. Internship, built a Scikit-Learn and TensorFlow based Machine-Learning pipeline for classification of LOS/NLOS 5G and GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution. Optimized ML models including SVM, k-NN, Decision Trees and Deep Neural Networks.<br><span class="langs">Tech: <span class="it">Python ·</span> <span class="it">MATLAB ·</span> <span class="it">SketchUp ·</span> <span class="it">Oktal-SE ·</span> <span class="it">SE-NAV</span> </span></li>
+              
+              <li><span class="b">Sensor Fusion and Localization</span><br>Designed a new Positioning Reference Signal for 5G (3GPP Release 16), implemented and validated it as OTDOA PRS, and compared its positioning accuracy with LTE-based OTDOA multilateration (PRS Rel.16 NR vs Rel.15 LTE) under AWGN and LOS vs NLOS channel conditions. Implemented a MATLAB simulation using a statistical channel model and a Ray-tracing model of an Indoor Office environment. Added a PRS module to the company codebase using a CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.<br><span class="langs">Tech: <span class="it">Matlab ·</span> <span class="it">C++ ·</span> <span class="it">SketchUp</span> </span></li>
+              
+              <li><span class="b">5G Testbed and Hybrid Positioning</span><br>Assisted a team in developing a testbed for 5G - New Radio signalling. Preprocessed Bayern state survey data to generate a 3D model of the city for channel modelling. Executed moving and coverage simulations for 5G and GNSS networks. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for GNSS and 5G hybrid positioning.<br><span class="langs">Tech: <span class="it">Python ·</span> <span class="it">MATLAB ·</span> <span class="it">SketchUp ·</span> <span class="it">Blender ·</span> <span class="it">Spirent ·</span> <span class="it">SimGEN ·</span> <span class="it">Oktal-SE ·</span> <span class="it">SE-NAV</span> </span></li>
+              
+            </ul>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">Jacobs University Bremen</span><br><span class="sub">Student Assistant<span class="sep"></span>Cognitive Science Lab - Prof. Dr. Adele Diedrich</span></div>
+                <div class="r">Bremen, Germany<br>Apr 2019 - May 2019</div>
+              </div>
+            </summary>
+            <ul class="items">
+              
+              <li><span class="b">Monte-Carlo Simulations</span><br>Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: MAAS model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.<br><span class="langs">Tech: <span class="it">MATLAB</span> </span></li>
+              
+            </ul>
+          </details>
+        
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <ol class="pubs">
+          
+          <li>
+            <span class="b">Communicating Semantics through Identification Codes: A Practical Demonstration</span><br>
+            <span class="b">Sheikh Usman Ali</span>, Shubham Mahajan, Juan A. Cabrera, Pit Hofmann, Frank H. P. Fitzek<br>
+            <span class="dim">2027 IEEE 24th Consumer Communications & Networking Conference (CCNC 2027), Las Vegas, NV, USA, 9–12 January 2027. Demo paper.</span>
+            
+            
+            
+          </li>
+          
+          <li>
+            <span class="b">Quantitative Analysis of Energy Consumption for Identification Codes on Embedded Devices</span><br>
+            <span class="b">Sheikh Usman Ali</span>, Shubham Mahajan, Juan A. Cabrera, Pit Hofmann, Frank H. P. Fitzek<br>
+            <span class="dim">European Wireless 2026 (EW 2026), Rimini, Italy, 17–19 June 2026, 6 pages.</span>
+            
+            
+            
+          </li>
+          
+          <li>
+            <span class="b">Metric-Driven Reliability and Error Performance Evaluation of K-Identification Systems</span><br>
+            Shubham Mahajan, <span class="b">Sheikh Usman Ali</span>, Juan A. Cabrera, Pit Hofmann, Frank H. P. Fitzek<br>
+            <span class="dim">European Wireless 2026 (EW 2026), Rimini, Italy, 17–19 June 2026, 6 pages.</span>
+            
+            
+            
+          </li>
+          
+          <li>
+            <span class="b">Supervised Machine Learning Assisted Hybrid Positioning Based on GNSS and 5G</span><br>
+            Phuong Bich Duong, Birendra Ghimire, Katrin Dietmayer, <span class="b">Sheikh Usman Ali</span>, Haider Al Kim, Jochen Seitz<br>
+            <span class="dim">2022 IEEE 12th International Conference on Indoor Positioning and Indoor Navigation (IPIN 2022), Beijing, China, 5–8 September 2022, pp. 1–8. DOI: <a href="https://doi.org/10.1109/IPIN54987.2022.9918098">10.1109/IPIN54987.2022.9918098</a>.</span>
+            
+            
+            
+          </li>
+          
+          <li>
+            <span class="b">A Combined Ray Tracing Simulation Environment for Hybrid 5G and GNSS Positioning</span><br>
+            Ivana Lukčin, Phuong Bich Duong, Katrin Dietmayer, <span class="b">Sheikh Usman Ali</span>, Sebastian Kram, Jochen Seitz, Wolfgang Felber<br>
+            <span class="dim">International Conference on Localization and GNSS (ICL-GNSS 2021), Work-in-Progress Papers, CEUR Workshop Proceedings, Vol. 2880, 2021.</span>
+            
+            
+            
+          </li>
+          
+        </ol>
+      </section>
+
+      <section id="projects">
+        <h2><a href="https://github.com/usmandroid">Projects</a></h2>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">Applied Machine Intelligence, TUM</span></div></div>
+            </summary>
+            <p class="desc">Led a team to develop an end-to-end Machine Learning project for Computer Vision. Deployed the final Flask based web application using Docker and Kubernetes.<br><span class="langs">Tech: <span class="it">Deep-Learning ·</span> <span class="it">Python ·</span> <span class="it">YOLO ·</span> <span class="it">Computer-Vision ·</span> <span class="it">Docker ·</span> <span class="it">Kubernetes</span> </span></p>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">Artificial Intelligence of Things, TUM</span></div></div>
+            </summary>
+            <p class="desc">Collected a custom MNIST dataset, trained and deployed a quantized, low-complexity CNN-based classifier on an embedded ESP32 microcontroller using the TFLite toolkit. Deployed the final IoT application at scale using Node-RED and MQTT.<br><span class="langs">Tech: <span class="it">Embedded-Systems ·</span> <span class="it">IoT ·</span> <span class="it">TensorFlow ·</span> <span class="it">TFLite ·</span> <span class="it">MQTT ·</span> <span class="it">Node-RED</span> </span></p>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">IoT Remote Lab, TUM</span></div></div>
+            </summary>
+            <p class="desc">Created a smart weather monitor for automated gardening sprinklers using web of things standard from W3C. Incorporated APIs to fetch hourly weather forecast, store it in a 48 hour database and based on self-built weather model predict the rain to attain optimal plant growth.<br><span class="langs">Tech: <span class="it">JavaScript ·</span> <span class="it">TypeScript ·</span> <span class="it">JSON ·</span> <span class="it">MySQL</span> </span></p>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">Entrepreneurship</span></div></div>
+            </summary>
+            <p class="desc">Lead role head of technology in a diverse team. Engineered Anti-poaching startup to combat illegal Rhino poaching in South Africa. Designed innovative solutions using drones, ML, and CV to assist rangers. Collaborated with drone manufacturers and space agency to devise a surveillance plan for tracking poaching incidents.<br><span class="langs">Tech: <span class="it">Python ·</span> <span class="it">OpenCV ·</span> <span class="it">C++</span> </span></p>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">Embedded Systems Lab, Jacobs University Bremen</span></div></div>
+            </summary>
+            <p class="desc">Designed a light-seeker Robot. Built a sensor using photo-resistors to determine direction of incoming light. Constructed a H-bridge that turns a Servo DC motor towards the light source. Researched a method to ramp the motor’s acceleration to create a critically damped system.<br><span class="langs">Tech: <span class="it">C++ ·</span> <span class="it">Embedded ·</span> <span class="it">C</span> </span></p>
+          </details>
+        
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">Advanced Digital Design, Jacobs University Bremen</span></div></div>
+            </summary>
+            <p class="desc">Created a VHDL based Universal Asynchronous Receiver/Transmitter (UART) using XILINX Synthesis tool on Spartan-3 Starter Kit Board. Built a driver for 7 Segment LED to display hexadecimal codes.<br><span class="langs">Tech: <span class="it">VHDL ·</span> <span class="it">C</span> </span></p>
+          </details>
+        
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <dl class="rows">
+          
+          <dt>Programming Languages</dt>
+          <dd><span class="it">Python ·</span> <span class="it">MATLAB ·</span> <span class="it">C ·</span> <span class="it">C++ ·</span> <span class="it">JavaScript ·</span> <span class="it">VHDL ·</span> <span class="it">HTML</span> </dd>
+          
+          <dt>IDEs</dt>
+          <dd><span class="it">VS Code ·</span> <span class="it">PyCharm ·</span> <span class="it">Visual Studio ·</span> <span class="it">Arduino</span> </dd>
+          
+          <dt>Software Development</dt>
+          <dd><span class="it">Git ·</span> <span class="it">Azure CI/CD ·</span> <span class="it">Agile</span> </dd>
+          
+          <dt>OSs</dt>
+          <dd><span class="it">MacOS ·</span> <span class="it">Linux ·</span> <span class="it">Windows ·</span> <span class="it">Android</span> </dd>
+          
+          <dt>Numerical Software</dt>
+          <dd><span class="it">NumPy ·</span> <span class="it">Pandas ·</span> <span class="it">R ·</span> <span class="it">Mathematica</span> </dd>
+          
+          <dt>Machine Learning</dt>
+          <dd><span class="it">TensorFlow/Keras ·</span> <span class="it">TFLite ·</span> <span class="it">PyTorch ·</span> <span class="it">NVIDIA TensorRT ·</span> <span class="it">ONNX ·</span> <span class="it">Aim ·</span> <span class="it">MLflow ·</span> <span class="it">Docker ·</span> <span class="it">Kubernetes ·</span> <span class="it">Flask</span> </dd>
+          
+          <dt>Simulation Tools</dt>
+          <dd><span class="it">LabVIEW NXG ·</span> <span class="it">GNU Radio ·</span> <span class="it">SIMULINK ·</span> <span class="it">LTspice</span> </dd>
+          
+          <dt>Publishing Software</dt>
+          <dd><span class="it">MS Office ·</span> <span class="it">LaTeX</span> </dd>
+          
+        </dl>
+      </section>
+
+      <section id="certificates">
+        <h2>Certificates</h2>
+        <ul class="items">
+          <li>HackaTUM 2022: Rhode & Schwarz Competition “Bring microwave imaging to the next level”</li><li>Coursera: Machine Learning Engineering for Production (MLOps) Specialization 2022</li>
+        </ul>
+      </section>
+
+      <section id="languages">
+        <h2>Languages</h2>
+        <p class="desc"><span class="it">English (fluent written, fluent oral) ·</span> <span class="it">German (intermediate written, intermediate oral) ·</span> <span class="it">Hindi/Urdu (native)</span> </p>
+      </section>
+
+      <p class="hint">
+        <button class="link jsonly" data-act="e">expand all (e)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="c">collapse all (c)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="t">theme (t)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="p">print (p)</button> <span class="jsonly">·</span>
+        <a href="https://github.com/usmandroid/usmandroid.github.io">source</a>
+      </p>
+    </main>
+    <script>
+// Keys: every action has one. Theme choice is shared with STYLESHEET.html (same storage key).
+// "auto" = no data-theme attribute: CSS follows the system dark/light setting live.
+(function () {
+  var themes = ["auto", "dark", "light", "eink"];
+  var root = document.documentElement;
+  var jobs = function () {
+    return document.querySelectorAll("details.job, details.abs");
+  };
+  var current = function () {
+    return root.dataset.theme || "auto";
+  };
+
+  function setTheme(t) {
+    if (t === "auto") root.removeAttribute("data-theme");
+    else root.dataset.theme = t;
+    try {
+      if (t === "auto") localStorage.removeItem("tc-style-theme");
+      else localStorage.setItem("tc-style-theme", t);
+    } catch (e) {}
+    document.querySelectorAll("[data-theme-set]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.themeSet === t);
+    });
+  }
+  function setAll(open) {
+    jobs().forEach(function (d) {
+      d.open = open;
+    });
+  }
+
+  var act = {
+    t: function () {
+      setTheme(themes[(themes.indexOf(current()) + 1) % themes.length]);
+    },
+    e: function () {
+      setAll(true);
+    },
+    c: function () {
+      setAll(false);
+    },
+    p: function () {
+      window.print();
+    },
+  };
+
+  document.addEventListener("keydown", function (ev) {
+    if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    var tag = (ev.target.tagName || "").toLowerCase();
+    if (tag === "input" || tag === "textarea") return;
+    if (act[ev.key]) act[ev.key]();
+  });
+  document.querySelectorAll("[data-act]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      act[b.dataset.act]();
+    });
+  });
+  document.querySelectorAll("[data-theme-set]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      setTheme(b.dataset.themeSet);
+    });
+  });
+  setTheme(current());
+
+  // print and PDF always show every entry, then restore the fold state
+  var state = [];
+  window.addEventListener("beforeprint", function () {
+    state = Array.prototype.map.call(jobs(), function (d) {
+      return d.open;
+    });
+    setAll(true);
+  });
+  window.addEventListener("afterprint", function () {
+    jobs().forEach(function (d, i) {
+      d.open = state[i];
+    });
+  });
+})();
+</script>
+  </body>
+</html>

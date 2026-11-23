@@ -1,21 +1,30 @@
 [
     {
-        "school": "Technical University of Munich",
+        "school": "Technical University of Munich (TUM)",
         "school_location": "Munich, Germany",
         "degree": "Master of Science - Communications Engineering (Nachrichtentechnik)",
-        "time_period": "Oct 2020 - Present"
+        "time_period": "Oct 2020 - Apr 2023",
+        "details": [
+            "Focus: Machine Learning, AI, Wireless Communications, IoT, Computer Networking",
+            "Courses: Applied Machine Intelligence, Machine Learning Methods and Tools, Software Defined Networking, Data Networking, Software Defined Radio Lab",
+            "Advanced Topic: Artificial Intelligence of Things",
+            "Thesis: Synchronization and Signal Detection in Wireless Communications: A Deep Learning Approach (LNT TUM, Motius GmbH)"
+        ]
     },
     {
         "school": "Jacobs University Bremen",
         "school_location": "Bremen, Germany",
-        "degree": "Bachelor of Science - Electrical and Computer Engineering (Minor Intelligent Mobile Systems); CGPA 1.87",
-        "time_period": "Aug 2017 - Jun 2020"
+        "degree": "Bachelor of Science - Electrical and Computer Engineering (Minor Intelligent Mobile Systems)",
+        "time_period": "Sep 2017 - Jul 2020",
+        "details": [
+            "Specialization: Wireless Communications and Information Theory, Embedded Systems",
+            "Thesis: Implementation and Evaluation of 5G positioning reference signals 3GPP Rel. 16, Grade 1.0, Supervisor: Prof. Dr. Giuseppe Abreu & Dr. Birendra Ghimire (Fraunhofer IIS)"
+        ]
     },
     {
         "school": "University of Aberdeen",
         "school_location": "Aberdeen, Scotland UK",
         "degree": "Semester Abroad Erasmus - Computing Science",
-        "time_period": "Sep 2020 - Feb 2020"
+        "time_period": "Sep 2019 - Feb 2020"
     }
-
 ]

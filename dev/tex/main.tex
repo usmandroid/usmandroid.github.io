@@ -1,10 +1,11 @@
 %-------------------------------------------
-% Resume in LuaLatex
+% Resume in LuaLaTeX
 % Author: Sheikh Usman Ali
-% (Works with Overleaf)
+% Build: `make resume` (needs lualatex + latexmk; run from the repo root)
+% Data: _data/*.json, printed by dev/lua/parser.lua (pure Lua, no lualibs/luacode needed)
 %-------------------------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -14,14 +15,15 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{needspace}
 
+% Fonts: Type1 + T1 so no fontspec/luaotfload is needed. Alegreya when installed
+% (texlive-fonts-extra), else TeX Gyre Pagella. dev/lua/parser.lua maps UTF-8 to T1 macros.
 \usepackage[T1]{fontenc}
-\usepackage{Alegreya} %% Option 'black' gives heavier bold face 
-\renewcommand*\oldstylenums[1]{{\AlegreyaOsF #1}}
+\IfFileExists{Alegreya.sty}{\usepackage{Alegreya}}{\usepackage{tgpagella}}
 
-\RequirePackage{luatex85}
-\usepackage{pdfcomment}
-\usepackage{luacode}
+\usepackage[hidelinks]{hyperref}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -46,49 +48,56 @@
 %-------------------------------------------
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{\Needspace{6\baselineskip}}[\color{black}\titlerule \vspace{-5pt}]
 
 % Custom commands
 %-------------------------------------------
 \definecolor{light-gray}{gray}{0.3}
+
+% one spacing rule for every list; every list gets the same right margin
+\setlist[itemize]{itemsep=2pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+
 \newcommand{\resumeItem}[3]{
   \item{
-    \textbf{#1} \ifthenelse{\equal{#3}{}}{}{\textcolor{light-gray}{\scriptsize\texttt{#3}}} {: \small #2 \vspace{-2pt}}
+    \textbf{#1}\ifthenelse{\equal{#3}{}}{}{ \textcolor{light-gray}{\scriptsize\texttt{#3}}}{: \small #2}
   }
 }
 
+\newcommand{\resumePlainItem}[1]{\item{\small #1}}
+
+\newcommand{\resumePubItem}[3]{\item{\small #1. \textbf{#2}. #3}}
+
+% entry headers keep together with their first line: never a header alone at a page end
 \newcommand{\resumeEduEntry}[4]{
-  \vspace{-1pt}\item
+  \Needspace{4\baselineskip}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small\textcolor{light-gray}{#3}} & \textit{\small\textcolor{light-gray}{#4}} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-3pt}
 }
 
 \newcommand{\resumeExpEntry}[5]{
-  \vspace{-1pt}\item
+  \Needspace{6\baselineskip}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small\textcolor{light-gray}{#3 $\cdot$ #4}} & \textit{\small\textcolor{light-gray}{#5}} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-3pt}
 }
 
-\newcommand{\resumeSubItem}[3]{\resumeItem{#1}{#2}{#3}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[3]{\resumeItem{#1}{#2}{#3}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,rightmargin=10pt,label={},itemsep=5pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\setlist{rightmargin=10pt}\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
 
 \begin{document}
 
-% Load lua script
+% Load the Lua data printer
 %-------------------------------------------
-\begin{luacode}
-require("_lua/parser.lua")
-\end{luacode}
+\directlua{dofile("dev/lua/parser.lua")}
 
 % Print Heading
 %-------------------------------------------
@@ -98,14 +107,21 @@ require("_lua/parser.lua")
 %-------------------------------------------
 \section{Education}
   \resumeSubHeadingListStart
-	\directlua{printEduItems("_data/edu.json")}
+    \directlua{printEduItems("_data/edu.json")}
   \resumeSubHeadingListEnd
 
 % Print Experience
 %-------------------------------------------
 \section{Experience}
   \resumeSubHeadingListStart
-  	\directlua{printExpItems("_data/exp.json")}
+    \directlua{printExpItems("_data/exp.json")}
+  \resumeSubHeadingListEnd
+
+% Print Publications
+%-------------------------------------------
+\section{Publications}
+  \resumeSubHeadingListStart
+    \directlua{printPubItems("_data/pubs.json", "_data/personal.json")}
   \resumeSubHeadingListEnd
 
 % Print Projects
@@ -114,16 +130,24 @@ require("_lua/parser.lua")
   \resumeSubHeadingListStart
     \directlua{printProjItems("_data/proj.json")}
   \resumeSubHeadingListEnd
-  
+
 % Print Skills
 %-------------------------------------------
 \section{Technical Skills}
-  \resumeSubHeadingListStart 
-    \item{
-      \textbf{Languages}{: \directlua{printList("_data/personal.json", "languages", "language")}}
-      \hfill
-      \textbf{Technologies}{: \directlua{printList("_data/personal.json", "technologies", "technology")}}
-      }
+  \resumeSubHeadingListStart
+    \directlua{printSkillGroups("_data/personal.json")}
+  \resumeSubHeadingListEnd
+
+% Print Certificates and Languages
+%-------------------------------------------
+\section{Certificates}
+  \resumeSubHeadingListStart
+    \directlua{printCertItems("_data/personal.json")}
+  \resumeSubHeadingListEnd
+
+\section{Languages}
+  \resumeSubHeadingListStart
+    \resumePlainItem{\directlua{printSpoken("_data/personal.json")}}
   \resumeSubHeadingListEnd
 
 \end{document}

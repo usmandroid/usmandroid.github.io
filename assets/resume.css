@@ -1,0 +1,316 @@
+/* Resume: the terminalclock style sheet (STYLESHEET.html, section "Resume") applied to
+   the web page and its print/PDF output. Monochrome: text, bold, dim. No icons, no colour,
+   no filled buttons. Themes: auto (follows the visitor's system, live; the default), dark,
+   light, e-ink. No data-theme attribute = auto. Print is always black on white. */
+:root {
+  --bg: #0b0b0b;
+  --fg: #ddd;
+  --bd: #333;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #fafafa;
+    --fg: #111;
+    --bd: #ccc;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --fg: #111;
+  --bd: #ccc;
+  color-scheme: light;
+}
+:root[data-theme="eink"] {
+  --bg: #fff;
+  --fg: #000;
+  --bd: #000;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+body {
+  font:
+    13px/1.5 ui-monospace,
+    Menlo,
+    Consolas,
+    "DejaVu Sans Mono",
+    monospace;
+  padding: 28px 6vw 80px;
+}
+:root[data-theme="eink"] body {
+  font-weight: 600;
+}
+main {
+  max-width: 96ch;
+  margin: 0 auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--bd);
+}
+a:hover {
+  border-bottom-color: var(--fg);
+}
+.dim {
+  opacity: 0.6;
+}
+.b {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+h2 {
+  font-size: 16px;
+  margin: 30px 0 8px;
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 4px;
+}
+header p {
+  margin: 2px 0;
+}
+.sep:before {
+  content: " \00B7  ";
+}
+
+/* entry: bold name + dim line left, dim place + dates right */
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 18px;
+  margin: 10px 0 2px;
+}
+.entry .r {
+  text-align: right;
+  opacity: 0.6;
+}
+.entry .sub {
+  opacity: 0.6;
+}
+
+/* foldable entries: summary is the entry header, the marker is a glyph from the guide */
+details.job {
+  margin: 0;
+}
+details.job > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+details.job > summary::-webkit-details-marker {
+  display: none;
+}
+details.job > summary:before {
+  content: "\203A";
+  position: absolute;
+  left: -2.2ch;
+  top: 0;
+  font-weight: 700;
+}
+details.job[open] > summary:before {
+  content: "\2193";
+}
+
+/* detail lines belong to the entry above: ↳ */
+ul.items {
+  list-style: none;
+  margin: 2px 0 6px;
+  padding: 0;
+}
+ul.items li {
+  padding-left: 2ch;
+  text-indent: -2ch;
+  margin: 3px 0;
+  max-width: 90ch;
+}
+ul.items li:before {
+  content: "\21B3  ";
+  opacity: 0.6;
+}
+.tag,
+.langs {
+  opacity: 0.6;
+}
+.langs {
+  display: block;
+  max-width: calc(var(--limit, 90) * 1ch);
+}
+.tag:before {
+  content: " \00B7  ";
+}
+p.desc {
+  margin: 2px 0 8px;
+  max-width: 90ch;
+}
+
+/* publications: [n] in dim, newest first; the abstract folds */
+ol.pubs {
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+  counter-reset: pub;
+}
+ol.pubs li {
+  counter-increment: pub;
+  position: relative;
+  padding-left: 5ch;
+  margin: 10px 0;
+  max-width: 90ch;
+}
+ol.pubs li:before {
+  content: "[" counter(pub) "]";
+  position: absolute;
+  left: 0;
+  opacity: 0.6;
+}
+details.abs {
+  margin: 2px 0 0;
+}
+details.abs > summary {
+  list-style: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+details.abs > summary::-webkit-details-marker {
+  display: none;
+}
+details.abs > summary:before {
+  content: "\203A  ";
+}
+details.abs[open] > summary:before {
+  content: "\2193  ";
+}
+
+/* skills: the About pattern, dim right-aligned label + plain value */
+/* strict line limit (--limit characters, personal.json options.max_line_chars): lists wrap between items */
+.it {
+  white-space: nowrap;
+}
+.rows {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px 2ch;
+  margin: 6px 0;
+  max-width: calc(var(--limit, 90) * 1ch);
+}
+.rows dt {
+  text-align: right;
+  opacity: 0.6;
+}
+.rows dd {
+  margin: 0;
+}
+
+/* shortcuts are text with the key in brackets; one dim hint line */
+button.link {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+button.link[aria-pressed="true"] {
+  font-weight: 700;
+}
+button.link[aria-pressed="true"]:before {
+  content: "\203A ";
+}
+.hint {
+  margin-top: 44px;
+  opacity: 0.6;
+  font-size: 12px;
+}
+.hint button.link {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 20px 5vw 60px;
+  }
+  .entry {
+    grid-template-columns: 1fr;
+  }
+  .entry .r {
+    text-align: left;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  :root:root,
+  :root[data-theme] {
+    --bg: #fff;
+    --fg: #000;
+    --bd: #999;
+    color-scheme: light;
+  }
+  body {
+    padding: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+  main {
+    max-width: none;
+  }
+  h1 {
+    font-size: 20pt;
+  }
+  h2 {
+    font-size: 11.5pt;
+    margin: 12pt 0 4pt;
+    break-after: avoid;
+  }
+  .hint,
+  .themes {
+    display: none;
+  }
+  details.job > summary:before {
+    content: none;
+  }
+  .entry {
+    grid-template-columns: 1fr auto;
+  }
+  .entry .r {
+    text-align: right;
+  }
+  .entry,
+  ul.items li,
+  details.job,
+  ol.pubs li {
+    break-inside: avoid;
+  }
+  details.abs > summary:before {
+    content: none;
+  }
+  a {
+    border: 0;
+  }
+}
+
+/* controls that need JavaScript (theme, fold-all, print) are hidden without it; the page itself,
+   its folds (<details>) and the auto dark/light theme (a CSS media query) work without */
+.jsonly {
+  display: none;
+}
+.js .jsonly {
+  display: revert;
+}

@@ -1,13 +1,62 @@
 [
     {
+        "company": "Ecologic-Computing GmbH, TU Dresden (Guest Researcher)",
+        "company_location": "Dresden, Germany",
+        "role": "Research Scientist: Post Shannon",
+        "team": "6G Communications",
+        "time_duration": "Nov 2024 - Present",
+        "details": [
+            {
+                "title": "Goal-Oriented Communications",
+                "description": "Manage a software development team implementing C++ based goal-oriented communications algorithms for real-time embedded systems. Research and develop high performance versions of the state-of-the-art Identification codes for 6G communications systems.",
+                "languages": "C++"
+            },
+            {
+                "title": "GNU Radio WLAN OFDM Transceiver",
+                "description": "Devised a GNU Radio based WLAN OFDM transceiver to demonstrate the ID codes library schemes in a real world environment.",
+                "languages": "GNU-Radio SDR"
+            }
+        ]
+    },
+    {
+        "company": "SDR & RFmx, NI Dresden (Emerson)",
+        "company_location": "Saxony, Germany",
+        "role": "Software Engineer",
+        "team": "6G Research",
+        "time_duration": "May 2023 - Sep 2024",
+        "details": [
+            {
+                "title": "5G-NR Neural Receiver",
+                "description": "Developed Python and C based software tools to train and integrate low complexity Deep Learning based models for a 5G-NR Neural Receiver in a real-time CUDA GPU environment, using TensorFlow/Keras, NVIDIA TensorRT, Nvidia Sionna, LabView and ONNX for NI Ettus SDRs and C-based Open Air Interface to improve SNR gain.",
+                "languages": "RF Deep-Learning TensorFlow ONNX Python C"
+            },
+            {
+                "title": "Digital Predistortion for RF Power Amplifiers",
+                "description": "Developed a training and validation framework for Generative AI models including RNNs and LSTM based Digital Predistortion algorithms for RF Power Amplifiers in TensorFlow/Keras, to validate a Digital Twin PoC and improve the energy efficiency of PAs.",
+                "languages": "TensorFlow Keras C++"
+            },
+            {
+                "title": "Research Tooling",
+                "description": "Focus on AI/ML-based communication systems and research on suitable test systems. Managed efficient storage, loading and tagging of large datasets exceeding hundreds of gigabytes. Assisted the presentation of research results at internal and external events.",
+                "languages": ""
+            }
+        ]
+    },
+    {
         "company": "Motius GmbH",
         "company_location": "München, Germany",
-        "role": "Tech Specialist: Communications Engineer",
-        "team": "FunKI: Artificial Intelligence for the New Mobile Network",
-        "time_duration": " 2022 - Present",
-        "details": [{
+        "role": "Tech Specialist I: Communications Engineer",
+        "team": "Tech Cluster A.I. (FunKI)",
+        "time_duration": "Jun 2022 - Apr 2023",
+        "details": [
+            {
+                "title": "Master Thesis Work",
+                "description": "Developed a Link-layer simulator in Python compliant with IEEE 802.11a/p OFDM. Trained and evaluated various Deep Learning models in TensorFlow and PyTorch including CNN and ResNet based models.",
+                "languages": "Python TensorFlow PyTorch Docker"
+            },
+            {
                 "title": "Channel Estimation and Machine Learning",
-                "description": "Implemented Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using Tensoflow and Pytorch. Used GPU for batched algorithm implementation and parallel code execution.",
+                "description": "Implemented Least-squares and Minimum Mean-squared error and other various Channel estimation techniques for Wireless access in Vehicular environments using TensorFlow and PyTorch. Used GPU for batched algorithm implementation and parallel code execution.",
                 "languages": "Python MATLAB"
             }
         ]
@@ -15,23 +64,24 @@
     {
         "company": "Fraunhofer Institute for Integrated Circuits IIS",
         "company_location": "Nürnberg, Germany",
-        "role": "Research Assistant",
-        "team": "Positioning and Networks",
-        "time_duration": " 2019 - 2022",
-        "details": [{
+        "role": "Research Assistant and Intern",
+        "team": "Smart Sensing and Hybrid Positioning",
+        "time_duration": "Jan 2020 - Aug 2022",
+        "details": [
+            {
                 "title": "Smart Sensing and Analytics",
-                "description": "MSc. Internship, built a Scikit-Learn and TensorFlow based Machine-Learning pipeline for classification of LOS/NLOS 5G and GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution.",
-                "languages": " Python MATLAB SketchUp Oktal-SE SE-NAV"
+                "description": "MSc. Internship, built a Scikit-Learn and TensorFlow based Machine-Learning pipeline for classification of LOS/NLOS 5G and GNSS signal to further enhance positioning algorithm accuracy. Created Jupyter notebooks for ML-pipeline and documented data preprocessing. Performed ANOVA testing and PCA for feature selection. Migrated code for Kalman filter from MATLAB into python and ran unit-tests to verify and debug code execution. Optimized ML models including SVM, k-NN, Decision Trees and Deep Neural Networks.",
+                "languages": "Python MATLAB SketchUp Oktal-SE SE-NAV"
             },
             {
                 "title": "Sensor Fusion and Localization",
-                "description": "Designed a new Positioning Referece Signal for 5G (3GPP Release 16) and compared the positioning accuracy of state of the art with LTE-based OTDOA multilateration. Implemented a MATLAB simulation using a statistical Channel modeland Ray-tracing model of Indoor Office environment.Added PRS module to the company codebase using CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
+                "description": "Designed a new Positioning Reference Signal for 5G (3GPP Release 16), implemented and validated it as OTDOA PRS, and compared its positioning accuracy with LTE-based OTDOA multilateration (PRS Rel.16 NR vs Rel.15 LTE) under AWGN and LOS vs NLOS channel conditions. Implemented a MATLAB simulation using a statistical channel model and a Ray-tracing model of an Indoor Office environment. Added a PRS module to the company codebase using a CI/CD pipeline. Built a GUI to visualize real-time TDOA simulation with mobile base stations.",
                 "languages": "Matlab C++ SketchUp"
             },
             {
-                "title": "Smart Sensing and Analytics",
+                "title": "5G Testbed and Hybrid Positioning",
                 "description": "Assisted a team in developing a testbed for 5G - New Radio signalling. Preprocessed Bayern state survey data to generate a 3D model of the city for channel modelling. Executed moving and coverage simulations for 5G and GNSS networks. Performed remote-controlled tests using Sim-Gen via python scripts over TCP/IP for GNSS and 5G hybrid positioning.",
-                "languages": " Python MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV"
+                "languages": "Python MATLAB SketchUp Blender Spirent SimGEN Oktal-SE SE-NAV"
             }
         ]
     },
@@ -41,10 +91,12 @@
         "role": "Student Assistant",
         "team": "Cognitive Science Lab - Prof. Dr. Adele Diedrich",
         "time_duration": "Apr 2019 - May 2019",
-        "details": [{
-            "title": "Monte-Carlo Simulations",
-            "description": "Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: MAAS model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.",
-            "languages": "MATLAB"
-        }]
+        "details": [
+            {
+                "title": "Monte-Carlo Simulations",
+                "description": "Developed and debugged a series of Monte-Carlo simulations in MATLAB for psychology experiments: MAAS model and Multi-stage sequential sampling models with finite or infinite horizon and variable boundaries. Implemented tests to verify the correct logic of developed simulations.",
+                "languages": "MATLAB"
+            }
+        ]
     }
 ]

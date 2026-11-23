@@ -1,0 +1,32 @@
+{
+    "width": 76,
+    "title": "Hi there, I'm Usman",
+    "tagline": "Mobile communications and machine learning engineer, in Germany",
+    "rows": [
+        ["working on", "Machine Learning · 5G Communications · IoT devices · Localization"],
+        ["learning", "Radar Signal Processing · Satellite Communications · SDN"],
+        ["collaborate", "Embedded IoT · Network design · Open-source projects"],
+        ["ask me about", "Existentialism · Design · Futurism"],
+        ["reach me", "sheikh.ali@tum.de"],
+        ["pronouns", "He/Him"],
+        [
+            "reading",
+            "The Design of Everyday Things (Don Norman) · A Field Guide to Lies and Statistics (Daniel Levitin)"
+        ],
+        [
+            "fun fact",
+            "You're one search away from finding out that your revolutionary idea is most likely already out there. If not, be the first one to share it!"
+        ]
+    ],
+    "links": [
+        ["linkedin", "https://www.linkedin.com/in/sheikh-usman-ali/"],
+        ["instagram", "https://www.instagram.com/usmansrkali/"],
+        ["github", "https://github.com/usmandroid"],
+        ["web", "https://usmandroid.github.io"]
+    ],
+    "images": {
+        "dark": "https://usmandroid.github.io/files/linkedin-banner-dark_3168x792_192dpi.png",
+        "light": "https://usmandroid.github.io/files/linkedin-banner-light_3168x792_192dpi.png",
+        "alt": "Sheikh Usman Ali"
+    }
+}

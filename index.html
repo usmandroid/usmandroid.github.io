@@ -2,107 +2,130 @@
 title: Sheikh Usman Ali
 ---
 {% assign personalData = site.data.personal[0] %}
+{% comment %} tags: personal.json options.show_languages / options.languages_as_list (make preview RESUME_LANGS=0|1 RESUME_LANGS_LIST=0|1) {% endcomment %}
+{% assign showLang = true %}{% if personalData.options.show_languages == false %}{% assign showLang = false %}{% endif %}
+{% assign limit = personalData.options.max_line_chars | default: 90 %}
+{% assign showAbstract = false %}{% if personalData.options.show_abstract == true %}{% assign showAbstract = true %}{% endif %}
+{% assign listLang = false %}{% if personalData.options.languages_as_list == true %}{% assign listLang = true %}{% endif %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" /-->
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
     <title>{{ personalData.name }}</title>
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('tc-style-theme');if(t&&t!=='auto')document.documentElement.dataset.theme=t}catch(e){}</script>
+    <link rel="stylesheet" href="assets/resume.css">
   </head>
 
   <body>
-    <div class="columns" style="padding-top:20px">
-      <div class="column is-8 is-offset-2">
+    <main style="--limit:{{ limit }}">
+      <header>
+        <h1>{{ personalData.name }}</h1>
+        <p class="dim">
+          <a href="mailto:{{ personalData.email }}">{{ personalData.email }}</a><span class="sep"></span><a href="{{ personalData.linkedin }}">linkedin</a><span class="sep"></span><a href="{{ personalData.github }}">github</a><span class="sep"></span><a href="{{ personalData.facebook }}">facebook</a><span class="sep"></span><a href="files/sheikhUsmanAli_resume.pdf" download>pdf</a><span class="sep"></span><a href="files/sheikhUsmanAli_resume.docx" download>docx</a>
+        </p>
+        <p class="themes jsonly dim">Theme: <button class="link" data-theme-set="auto">auto</button> · <button class="link" data-theme-set="dark">dark</button> · <button class="link" data-theme-set="light">light</button> · <button class="link" data-theme-set="eink">e-ink</button></p>
+      </header>
 
-        <div class="level content is-marginless">
-          <p class="title is-2">{{ personalData.name }}</p>
-          <p class="subtitle is-5">
-            <a href="mailto:{{ personalData.email }}" class="icon"><i class="fa fa-envelope-square" aria-hidden="true"></i></a>
-            <a href="{{ personalData.linkedin }}" class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-            <a href="{{ personalData.facebook }}" class="icon"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-            <a href="{{ personalData.github }}" class="icon"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-            <!--a href="kumarpallav_resume.pdf" class="icon" download><i class="fa fa-download" aria-hidden="true"></i></a-->
-          </p>
-        </div>
+      <section id="education">
+        <h2>Education</h2>
+        {% for schoolData in site.data.edu %}
+          <div class="entry">
+            <div><span class="b">{{ schoolData.school }}</span><br><span class="sub">{{ schoolData.degree }}</span></div>
+            <div class="r">{{ schoolData.school_location }}<br>{{ schoolData.time_period }}</div>
+          </div>
+          {% if schoolData.details %}
+          <ul class="items">
+            {% for d in schoolData.details %}<li>{{ d }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        {% endfor %}
+      </section>
 
-        <div class="content">
-          <span class="heading"><h3>Education</h3></span>
-          {% for schoolData in site.data.edu %}
-            <div class="level">
-              <p class="is-marginless">{{ schoolData.school }}<br/><span class="content is-marginless" style="font-size: 0.8rem">{{ schoolData.degree }}</span></p>
-              <p style="text-align: right; font-size: 0.8rem">{{ schoolData.school_location }}<br/><span class="content is-marginless">{{ schoolData.time_period }}</span></p>
-            </div>
-          {% endfor %}
-        </div>
-
-        <div class="content">
-          <span class="heading"><h3>Experience</h3></span>
-          {% for experience in site.data.exp %}
-            <div class="level is-marginless">
-              <p class="is-marginless">{{ experience.company }}<br/><span class="content is-marginless" style="font-size: 0.8rem">{{ experience.role }}, {{ experience.team }}</span></p>
-              <p style="text-align: right; font-size: 0.8rem">{{ experience.company_location }}<br/><span class="content is-marginless">{{ experience.time_duration }}</span></p>
-            </div>
-            <ul style="margin-top: 0.2em; list-style-type: circle;">
+      <section id="experience">
+        <h2>Experience</h2>
+        {% for experience in site.data.exp %}
+          <details class="job" open>
+            <summary>
+              <div class="entry">
+                <div><span class="b">{{ experience.company }}</span><br><span class="sub">{{ experience.role }}<span class="sep"></span>{{ experience.team }}</span></div>
+                <div class="r">{{ experience.company_location }}<br>{{ experience.time_duration }}</div>
+              </div>
+            </summary>
+            <ul class="items">
               {% for detail in experience.details %}
-              <li class="content is-marginless" style="font-size: 0.8rem">
-                <span class="heading is-marginless">
-                  {{ detail.title }}
-                  <span style="margin-left:  5px; font-size: 10px; font-family:  monospace; color: #00d1b2;">{{ detail.languages }}</span>
-                </span>
-                {{ detail.description }}
-              </li>
+              <li><span class="b">{{ detail.title }}</span>{% if showLang and detail.languages != "" and listLang == false %}<span class="tag">{{ detail.languages }}</span>{% endif %}<br>{{ detail.description }}{% if showLang and detail.languages != "" and listLang %}<br><span class="langs">Tech: {% assign tl = detail.languages | split: " " %}{% for l in tl %}<span class="it">{{ l }}{% unless forloop.last %} ·{% endunless %}</span> {% endfor %}</span>{% endif %}</li>
               {% endfor %}
             </ul>
+          </details>
+        {% endfor %}
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <ol class="pubs">
+          {% for p in site.data.pubs %}
+          <li>
+            <span class="b">{{ p.title }}</span><br>
+            {% for a in p.authors %}{% if a == personalData.name %}<span class="b">{{ a }}</span>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}<br>
+            <span class="dim">{{ p.venue }}{% if p.place and p.place != "" %}, {{ p.place }}{% endif %}{% if p.pages and p.pages != "" %}, {{ p.pages }}{% endif %}.{% if p.doi and p.doi != "" %} DOI: <a href="https://doi.org/{{ p.doi }}">{{ p.doi }}</a>.{% endif %}{% if p.note and p.note != "" %} {{ p.note }}.{% endif %}</span>
+            {% assign hasLinks = false %}{% for l in p.links %}{% if l.url and l.url != "" %}{% assign hasLinks = true %}{% endif %}{% endfor %}
+            {% if hasLinks %}<br><span class="dim">Links: {% for l in p.links %}{% if l.url and l.url != "" %}<a href="{{ l.url }}">{{ l.label }}</a> {% endif %}{% endfor %}</span>{% endif %}
+            {% if showAbstract and p.abstract and p.abstract != "" %}
+            <details class="abs">
+              <summary>abstract</summary>
+              <p class="desc">{{ p.abstract }}</p>
+              {% if p.keywords.size > 0 %}<p class="desc dim">Keywords: {{ p.keywords | join: "; " }}</p>{% endif %}
+            </details>
+            {% endif %}
+          </li>
           {% endfor %}
-        </div>
+        </ol>
+      </section>
 
-        <div class="content">
-          <span class="heading"><h3>Projects</h3></span>
-          {% for project in site.data.proj %}
-            <p class="heading is-marginless">
-              {{ project.title }}
-              <span style="margin-left:  5px; font-size: 10px; font-family:  monospace; color: #00d1b2;">{{ project.languages }}</span>
-            </p>
-            <p style="font-size: 0.8rem">{{ project.description }}</p>
+      <section id="projects">
+        <h2><a href="{{ personalData.github }}">Projects</a></h2>
+        {% for project in site.data.proj %}
+          <details class="job" open>
+            <summary>
+              <div class="entry"><div><span class="b">{{ project.title }}</span>{% if showLang and listLang == false %}<span class="tag">{{ project.languages }}</span>{% endif %}</div></div>
+            </summary>
+            <p class="desc">{{ project.description }}{% if showLang and listLang %}<br><span class="langs">Tech: {% assign tl = project.languages | split: " " %}{% for l in tl %}<span class="it">{{ l }}{% unless forloop.last %} ·{% endunless %}</span> {% endfor %}</span>{% endif %}</p>
+          </details>
+        {% endfor %}
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <dl class="rows">
+          {% for group in personalData.skill_groups %}
+          <dt>{{ group.label }}</dt>
+          <dd>{% for item in group.items %}<span class="it">{{ item }}{% unless forloop.last %} ·{% endunless %}</span> {% endfor %}</dd>
           {% endfor %}
-        </div>
+        </dl>
+      </section>
 
-        <div class="content">
-          <span class="heading"><h3>Skills</h3></span>
-            <p class="heading is-marginless">Languages</p>
-            <p style="font-size: 0.8rem">
-            {% for language in personalData.languages %}
-              {{language.language}}
-            {% endfor %}
-            </p>
+      <section id="certificates">
+        <h2>Certificates</h2>
+        <ul class="items">
+          {% for c in personalData.certificates %}<li>{{ c }}</li>{% endfor %}
+        </ul>
+      </section>
 
-            <p class="heading is-marginless">Technologies</p>
-            <p style="font-size: 0.8rem">
-            {% for technology in personalData.technologies %}
-                {{technology.technology}}
-              {% endfor %}
-            </p>
-        </div>
+      <section id="languages">
+        <h2>Languages</h2>
+        <p class="desc">{% for l in personalData.spoken_languages %}<span class="it">{{ l }}{% unless forloop.last %} ·{% endunless %}</span> {% endfor %}</p>
+      </section>
 
-        <footer class="footer" style="background: inherit;">
-          <div class="content has-text-centered">
-            <p>
-              <a class="icon" href="https://github.com/usmandroid/usmandroid.github.io">
-                <i class="fa fa-github"></i>
-              </a>
-              <a href="sheikhUsmanAli_resume.pdf" class="icon" download>
-                <i class="fa fa-download" aria-hidden="true"> 
-              </i></a>
-            </p>
-          </div>
-        </footer>
-
-      </div>
-    </div>
+      <p class="hint">
+        <button class="link jsonly" data-act="e">expand all (e)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="c">collapse all (c)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="t">theme (t)</button> <span class="jsonly">·</span>
+        <button class="link jsonly" data-act="p">print (p)</button> <span class="jsonly">·</span>
+        <a href="https://github.com/usmandroid/usmandroid.github.io">source</a>
+      </p>
+    </main>
+    <script src="assets/resume.js"></script>
   </body>
 </html>

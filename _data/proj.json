@@ -1,22 +1,32 @@
 [
     {
-        "title": "IoT Remote Lab",
-        "description": "Created a smart weather monitor for automated gardening sprinklers using web of things standard from W3C. Incorporated APIs to fetch hourly weather forecast, store it in a 48 hour database and based on self-built weather model predict the rain to attain optimal plant growth. ",
-        "languages": "JavaScript nodejs JSON MySQL"
+        "title": "Applied Machine Intelligence, TUM",
+        "description": "Led a team to develop an end-to-end Machine Learning project for Computer Vision. Deployed the final Flask based web application using Docker and Kubernetes.",
+        "languages": "Deep-Learning Python YOLO Computer-Vision Docker Kubernetes"
     },
     {
-        "title": "Enterpreneurship",
-        "description": "Lead role head of technology in a diverse team. Engineered Anti-poaching startup to combat illegal Rhino poaching in South Africa. Designed innovative solutions using drones, ML, and CV to assist rangers. Collaborated with drone manufactorers and and space agency to devise a surveillance plan for tracking poaching incidents.",
+        "title": "Artificial Intelligence of Things, TUM",
+        "description": "Collected a custom MNIST dataset, trained and deployed a quantized, low-complexity CNN-based classifier on an embedded ESP32 microcontroller using the TFLite toolkit. Deployed the final IoT application at scale using Node-RED and MQTT.",
+        "languages": "Embedded-Systems IoT TensorFlow TFLite MQTT Node-RED"
+    },
+    {
+        "title": "IoT Remote Lab, TUM",
+        "description": "Created a smart weather monitor for automated gardening sprinklers using web of things standard from W3C. Incorporated APIs to fetch hourly weather forecast, store it in a 48 hour database and based on self-built weather model predict the rain to attain optimal plant growth.",
+        "languages": "JavaScript TypeScript JSON MySQL"
+    },
+    {
+        "title": "Entrepreneurship",
+        "description": "Lead role head of technology in a diverse team. Engineered Anti-poaching startup to combat illegal Rhino poaching in South Africa. Designed innovative solutions using drones, ML, and CV to assist rangers. Collaborated with drone manufacturers and space agency to devise a surveillance plan for tracking poaching incidents.",
         "languages": "Python OpenCV C++"
     },
     {
-        "title": "Embedded Systems Lab",
-        "description": "Designed a light-Seeker Robot. Built a sensor using photo-resistors to determine direction of incoming light. Constructed a H-bridge that turns a Servo DC motor towards the light source. Researched a method to ramp the motor’s acceleration to create a critically damped system. ",
+        "title": "Embedded Systems Lab, Jacobs University Bremen",
+        "description": "Designed a light-seeker Robot. Built a sensor using photo-resistors to determine direction of incoming light. Constructed a H-bridge that turns a Servo DC motor towards the light source. Researched a method to ramp the motor’s acceleration to create a critically damped system.",
         "languages": "C++ Embedded C"
     },
     {
-        "title": "Advanced Digital Design",
-        "description": "Created a VHDL based Universal Asynchronous Receiver/Transmitter (UART) using XILINX Synthesis tool on Spartan-3 Starter Kit Board. Built a driver for 7 Segmend LED to display hexadecimal codes.",
+        "title": "Advanced Digital Design, Jacobs University Bremen",
+        "description": "Created a VHDL based Universal Asynchronous Receiver/Transmitter (UART) using XILINX Synthesis tool on Spartan-3 Starter Kit Board. Built a driver for 7 Segment LED to display hexadecimal codes.",
         "languages": "VHDL C"
     }
 ]

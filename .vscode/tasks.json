@@ -1,0 +1,128 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // ===== formatting ========================================================================
+        {
+            "label": "format: python (black)",
+            "type": "shell",
+            "command": "${workspaceFolder}/dev/.venv/bin/python -m black --config dev/config/pyproject.toml .",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "format: json/css/js/markdown/yaml (prettier)",
+            "type": "shell",
+            "command": "npx --yes prettier@3 --config dev/config/prettierrc.json --ignore-path dev/config/prettierignore --write '**/*.{json,css,js,md,yml,yaml}'",
+            "problemMatcher": []
+        },
+        {
+            "label": "format: lua (stylua)",
+            "type": "shell",
+            "command": "npx --yes @johnnymorganz/stylua-bin --config-path dev/config/stylua.toml dev/lua",
+            "problemMatcher": []
+        },
+        {
+            "label": "format: everything",
+            "dependsOn": [
+                "format: python (black)",
+                "format: json/css/js/markdown/yaml (prettier)",
+                "format: lua (stylua)"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+
+        // ===== linting (no changes, non-zero exit when something is off) ===========================
+        {
+            "label": "lint: python (black --check)",
+            "type": "shell",
+            "command": "${workspaceFolder}/dev/.venv/bin/python -m black --config dev/config/pyproject.toml --check --diff .",
+            "group": "test",
+            "problemMatcher": {
+                "owner": "black",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": { "regexp": "^would reformat (.+)$", "file": 1, "message": 0 }
+            }
+        },
+        {
+            "label": "lint: json/css/js/markdown/yaml (prettier --check)",
+            "type": "shell",
+            "command": "npx --yes prettier@3 --config dev/config/prettierrc.json --ignore-path dev/config/prettierignore --check '**/*.{json,css,js,md,yml,yaml}'",
+            "problemMatcher": []
+        },
+        {
+            "label": "lint: lua (stylua --check)",
+            "type": "shell",
+            "command": "npx --yes @johnnymorganz/stylua-bin --config-path dev/config/stylua.toml --check dev/lua",
+            "problemMatcher": []
+        },
+        {
+            "label": "lint: data (json files parse, Lua reads them)",
+            "type": "shell",
+            "command": "texlua dev/lua/selftest.lua",
+            "problemMatcher": []
+        },
+        {
+            "label": "lint: everything",
+            "dependsOn": [
+                "lint: python (black --check)",
+                "lint: json/css/js/markdown/yaml (prettier --check)",
+                "lint: lua (stylua --check)",
+                "lint: data (json files parse, Lua reads them)"
+            ],
+            "problemMatcher": []
+        },
+
+        // ===== build (see the Makefile header for the options) =====================================
+        {
+            "label": "build: resume PDF + Word (make)",
+            "type": "shell",
+            "command": "make resume docx",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": []
+        },
+        {
+            "label": "build: publications PDF + Word (make pubs)",
+            "type": "shell",
+            "command": "make pubs && make docx",
+            "problemMatcher": []
+        },
+        {
+            "label": "build: web preview (make preview)",
+            "type": "shell",
+            "command": "make preview",
+            "problemMatcher": []
+        },
+        {
+            "label": "build: serve preview on :8000",
+            "type": "shell",
+            "command": "make serve",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "build: HTML to PDF, A5 zoom 30%",
+            "type": "shell",
+            "command": "make htmlpdf",
+            "problemMatcher": []
+        },
+        {
+            "label": "build: LinkedIn banners",
+            "type": "shell",
+            "command": "make banner",
+            "problemMatcher": []
+        },
+        {
+            "label": "build: check toolchain (make doctor)",
+            "type": "shell",
+            "command": "make doctor",
+            "problemMatcher": []
+        },
+        {
+            "label": "build: install formatter tools (black into .venv)",
+            "type": "shell",
+            "command": "make devtools",
+            "problemMatcher": []
+        }
+    ]
+}
